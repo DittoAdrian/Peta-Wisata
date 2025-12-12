@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>WebGIS Objek Wisata</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    #map {
+      height: 100vh;
+    }
+    .popup-img {
+      width: 200px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Inisialisasi peta
+    var map = L.map('map').setView([-6.9175, 107.6191], 13); // Koordinat Bandung contoh
+
+    // Tambahkan tile basemap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // DATA OBJEK WISATA (contoh)
+    var wisata = [
+      {
+        nama: "Alun-Alun Bandung",
+        koordinat: [-6.9218, 107.6079],
+        foto: "https://upload.wikimedia.org/wikipedia/commons/4/49/Alun-alun_Bandung.jpg",
+        deskripsi: "Alun-alun kota Bandung yang menjadi ruang publik utama."
+      },
+      {
+        nama: "Taman Vanda",
+        koordinat: [-6.9147, 107.6098],
+        foto: "https://upload.wikimedia.org/wikipedia/commons/2/25/Taman_Vanda_Bandung.jpg",
+        deskripsi: "Taman kota dengan air mancur warna-warni."
+      }
+    ];
+
+    // Loop data → buat marker
+    wisata.forEach(function(item) {
+      var popupContent = `
+        <h3>${item.nama}</h3>
+        <img src="${item.foto}" class="popup-img" />
+        <p>${item.deskripsi}</p>
+      `;
+
+      L.marker(item.koordinat).addTo(map)
+        .bindPopup(popupContent);
+    });
+
+  </script>
+</body>
+</html>
+

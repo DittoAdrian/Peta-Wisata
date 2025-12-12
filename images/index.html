@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>WebGIS Objek Wisata</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+      /* #map {
+        height: 100vh;
+      } */
+      .popup-img {
+        width: 200px;
+        border-radius: 8px;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+      }
+
+      /* Container utama */
+      .map-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Judul */
+      .map-title {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      /* Area peta */
+      #map {
+        height: 720px;
+        width: 100%;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="map-container">
+      <div class="map-title">Peta Wisata Daerah Kecamatan Ketungau Hulu</div>
+      <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+      // Inisialisasi peta
+      var map = L.map("map").setView([0.896615, 111.080641], 11);
+
+      // Tambahkan tile basemap
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 15,
+        attribution: "© OpenStreetMap",
+      }).addTo(map);
+
+      // Fungsi untuk membuat Icon
+      function createIcon(filename) {
+        return L.icon({
+          iconUrl: `icon/${filename}`,
+          iconSize: [50, 50],
+          iconAnchor: [16, 32],
+        });
+      }
+
+      //Icon gambar
+      const icons = {
+        point: createIcon("point.png"),
+        airTerjun: createIcon("waterfall.png"),
+        danau: createIcon("lake.png"),
+        monument: createIcon("landmark.png"),
+        sungai: createIcon("river.png"),
+        gunung: createIcon("mountain.png")
+      };
+
+      // DATA OBJEK WISATA
+      var wisata = [
+        {
+          nama: "Air terjun Dusun Belubu",
+          koordinat: [0.95123, 111.29413],
+          foto: "images/airTerjunDusunBelubu.jpg",
+          deskripsi: "Air Terjun Dusun Belubu merupakan salah satu objek wisata alam yang terdapat di Kecamatan Ketungau Hulu",
+          icon: "airTerjun",
+        },
+        {
+          nama: "Air Terjun Sungai Kelingkang",
+          koordinat: [1.06071, 111.16583],
+          foto: "images/SungaiKelingkang.png",
+          deskripsi:
+            "Air Terjun Sungai Kelingkang merupakan salah satu objek wisata alam yang terdapat di Kecamatan Ketungau Hulu, Kabupaten Sintang, Kalimantan Barat. Air terjun ini berada di kawasan Desa Nanga Bayan, sebuah wilayah perbukitan di bagian hulu daerah Ketungau. Lokasinya dikelilingi oleh hutan tropis yang masih terjaga, sehingga memberikan suasana alam yang sejuk, tenang, dan alami.Bentang air yang jatuh melalui tebing batu membentuk beberapa tingkatan yang indah. Aliran airnya jernih dan mengalir menuju sungai yang lebih rendah sehingga menghasilkan suara gemericik yang menenangkan. Vegetasi di sekitarnya rapat, terdiri dari pepohonan tinggi, tanaman bawah, serta semak belukar yang menjadi habitat berbagai jenis fauna hutan.",
+          icon: "airTerjun",
+        },
+        {
+          nama: "Tugu Garuda",
+          koordinat: [1.000472, 111.135722],
+          foto: "images/TuguGaruda.jpg",
+          deskripsi:
+            "Tugu Garuda di Desa Jasa merupakan salah satu penanda wilayah yang memiliki nilai simbolik dan historis bagi masyarakat setempat di Kecamatan Ketungau Hulu. Tugu ini berdiri kokoh di ruang terbuka desa sebagai representasi lambang negara Indonesia, yaitu burung Garuda, yang mencerminkan semangat persatuan, keberanian, dan nasionalisme.Secara visual, tugu ini berbentuk tiang beton dengan ornamen Garuda Pancasila di bagian atasnya. Struktur ini menjadi titik orientasi bagi warga, serta sering dijadikan tempat berkumpul pada kegiatan sosial dan peringatan kenegaraan. Keberadaannya mempertegas identitas desa sebagai wilayah yang berada di daerah perbatasan, sekaligus menjadi pengingat akan pentingnya menjaga kedaulatan wilayah dan rasa kebangsaan",
+          icon: "monument",
+        },
+        {
+          nama: "Sungai Kelik",
+          koordinat: [1.012431, 111.217461],
+          foto: "images/sungaiKelik.jpg",
+          deskripsi:
+            "Sungai Kelik merupakan salah satu aliran sungai yang berada di wilayah Kecamatan Ketungau Hulu, Kabupaten Sintang. Sungai ini menjadi bagian dari jaringan sungai pedalaman yang mengalir melalui kawasan hutan, ladang masyarakat, dan permukiman desa. Aliran airnya relatif tenang pada musim kemarau, sementara pada musim hujan debitnya meningkat dan membuat sungai tampak lebih lebar.Lingkungan di sekitar Sungai Kelik didominasi oleh vegetasi tropis, dengan pepohonan rindang yang tumbuh di sepanjang tepi sungai. Kondisi alam yang masih alami ini menjadikan sungai sebagai habitat berbagai jenis ikan sungai dan satwa kecil lainnya. Bagi penduduk setempat, sungai ini memiliki peran penting dalam kehidupan sehari-hari. Selain menjadi sumber air untuk kebutuhan domestik, Sungai Kelik juga digunakan untuk memancing, mencuci, serta menjadi tempat rekreasi alami bagi warga desa.",
+          icon: "sungai",
+        },
+        {
+          nama: "Air Terjun Bayan",
+          koordinat: [0.973222, 111.019916],
+          foto: "images/airTerjunBayan.jpg",
+          deskripsi:
+            "Air Terjun Bayan merupakan salah satu potensi alam yang berada di wilayah pedalaman Kecamatan Ketungau Hulu. Air terjun ini dikenal oleh masyarakat sekitar sebagai aliran air berbentuk terjunan yang berasal dari sungai kecil di kawasan hutan, dengan arus yang mengalir dari dataran lebih tinggi menuju lembah. Suara gemuruh air yang jatuh ke kolam alami di bawahnya menciptakan suasana yang sejuk dan tenang, serta menjadi ciri khas lingkungan hutan tropis di daerah ini.Lingkungan di sekitar Air Terjun Bayan masih sangat alami, dikelilingi pepohonan tinggi, semak-semak hijau, dan formasi batuan yang membingkai aliran air. Tempat ini menjadi titik perhentian alami bagi warga yang datang untuk beristirahat, mandi, atau menikmati pemandangan. Pada musim penghujan, debit air meningkat dan air terjun tampak lebih lebar dan kuat, sementara pada musim kemarau alirannya lebih tenang, menampakkan bebatuan dasar yang halus",
+          icon: "airTerjun",
+        },
+        {
+          nama:"Sungai Ketungau Marakai ",
+          koordinat: [0.38305, 111.63305],
+          foto: "images/sungaiKetungauMarakai.jpg",
+          deskripsi:"Sungai Ketungau Marakai merupakan salah satu aliran sungai yang berada di wilayah perbatasan Kecamatan Ketungau Hulu, Kabupaten Sintang. Sungai ini menjadi bagian dari sistem Sungai Ketungau yang mengalir dari daerah pedalaman menuju wilayah selatan Sintang. Aliran airnya melewati kawasan hutan tropis, ladang masyarakat, serta perkampungan yang berada di sepanjang bantaran sungai.",
+          icon: "sungai"
+
+        },
+        {
+          nama: "Danau Jamelak",
+          koordinat: [0.082850, 111.543000],
+          foto: "images/danauJamelak.png",
+          deskripsi: "lorem ipsum",
+          icon: "danau"
+        },
+        {
+          nama: "Danau Jemut",
+          koordinat: [0.36428, 111.58677],
+          foto: "images/danauJemut.png",
+          deskripsi:"...",
+          icon: "danau"
+
+        },
+        {
+          nama: "Bukit Kelam",
+          koordinat: [0.074873, 111.654927],
+          foto: "images/bukitKelam.png",
+          deskripsi:"...",
+          icon:"gunung"
+        },
+        {
+          nama:"Bukit Saran",
+          koordinat:[-0.4222539, 111.29438],
+          foto:"images/bukitSaran.png",
+          deskripsi:"...",
+          icon: "gunung"
+
+        }
+      ];
+
+      // Tampilkan marker
+      wisata.forEach(function (item) {
+        //Pop-up Content
+        var popupContent = `
+        <h3>${item.nama}</h3>
+        <img src="${item.foto}" style="width:200px; border-radius:8px;">
+        <h4>${item.koordinat}</h4>
+        <p>${item.deskripsi}</p>
+    `;
+        //Marker
+        L.marker(item.koordinat, { icon: icons[item.icon] })
+          .addTo(map)
+          .bindPopup(popupContent);
+      });
+
+      // === MEMUAT GEOJSON ===
+      fetch("data/kec_ketungau_hulu.geojson")
+        .then((response) => response.json())
+        .then((data) => {
+          L.geoJSON(data, {
+            style: {
+              color: "red",
+              weight: 2,
+              fillOpacity: 0.2,
+            },
+          }).addTo(map);
+        });
+
+      fetch("data/kwsn_trans_ketungau_hulu.geojson")
+        .then((response) => response.json())
+        .then((data) => {
+          L.geoJSON(data, {
+            style: {
+              color: "yellow",
+              weight: 2,
+              fillOpacity: 0.2,
+            },
+          }).addTo(map);
+        });
+    </script>
+  </body>
+</html>
