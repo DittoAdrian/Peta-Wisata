@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>WebGIS Objek Wisata</title>
 
@@ -14,12 +14,19 @@
     <div class="container">
       <!-- KOLOM 1 (MAP) -->
       <div class="left">
+        <div class="map-filter">
+          <button data-filter="semua" class="active">Semua</button>
+          <button data-filter="wisata">Potensi Wisata</button>
+          <button data-filter="pertanian">Potensi Pertanian</button>
+          <button data-filter="alam">Potensi Alam</button>
+          <button data-filter="infrastruktur">infrastruktur</button>
+        </div>
         <div id="map"></div>
       </div>
 
       <!-- KOLOM 2 (LIST WISATA) -->
       <div class="right">
-        <h2>Daftar Objek Wisata</h2>
+        <h2 id="list-title">Story Map Potensi Ekonomi di Kecamatan Ketungau Hulu, Kabupaten Sintang, Provinsi Kalimantan Barat</h2>
         <div id="list-wisata"></div>
       </div>
     </div>
@@ -27,5 +34,4 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="js/script.js"></script>
   </body>
-
 </html>
