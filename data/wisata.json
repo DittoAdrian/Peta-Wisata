@@ -48,28 +48,12 @@
     "tipe": ["semua","alam"]
   },
   {
-    "nama": "Danau Jamelak",
-    "koordinat": [0.08285, 111.543],
-    "foto": "images/danauJamelak.png",
-    "deskripsi":"sebuah kawasan ekowisata dan area konservasi alam yang terletak di Kelurahan Akcaya, Kecamatan Sintang, Kabupaten Sintang, Kalimantan Barat. Kawasan ini sering dijuluki sebagai 'surganya Kota Sintang' dan dikelola oleh masyarakat setempat untuk menjaga kelestarian lingkungan dan mempromosikan potensi wisata",
-    "icon": "danau",
-    "tipe": ["semua","pertanian"]
-  },
-  {
-    "nama": "Danau Jemut",
-    "koordinat": [0.36428, 111.58677],
-    "foto": "images/danauJemut.png",
-    "deskripsi":"Danau alami yang berperan penting sebagai habitat ikan air tawar di daerah aliran Sungai Ketungau",
-    "icon": "danau",
-    "tipe": ["semua","alam"]
-  },
-  {
     "nama": "Bukit Kelam",
     "koordinat": [0.074873, 111.654927],
     "foto": "images/bukitKelam.png",
     "deskripsi":"Bukit Kelam adalah sebongkah batu granit raksasa (monolit) yang membentang dari barat ke timur sepanjang sekitar 2-3 kilometer, dengan ketinggian mencapai 1.002 meter di atas permukaan laut (mdpl). Keunikannya terletak pada strukturnya yang hampir vertikal dan vegetasi hijau lebat yang tumbuh di lerengnya, menjadikannya pemandangan alam yang dramatis.",
     "icon": "gunung",
-    "tipe": ["semua","alam"]
+    "tipe": ["semua","alam"]100
   },
   {
     "nama": "Bukit Saran",
@@ -79,4 +63,5 @@
     "icon": "gunung",
     "tipe": ["semua","alam"]
   }
+
 ]
