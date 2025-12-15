@@ -53,7 +53,7 @@
     "foto": "images/bukitKelam.png",
     "deskripsi":"Bukit Kelam adalah sebongkah batu granit raksasa (monolit) yang membentang dari barat ke timur sepanjang sekitar 2-3 kilometer, dengan ketinggian mencapai 1.002 meter di atas permukaan laut (mdpl). Keunikannya terletak pada strukturnya yang hampir vertikal dan vegetasi hijau lebat yang tumbuh di lerengnya, menjadikannya pemandangan alam yang dramatis.",
     "icon": "gunung",
-    "tipe": ["semua","alam"]100
+    "tipe": ["semua","alam"]
   },
   {
     "nama": "Bukit Saran",
@@ -65,3 +65,4 @@
   }
 
 ]
+
