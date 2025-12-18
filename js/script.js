@@ -11,7 +11,6 @@ var map = L.map("map").setView([0.896615, 111.080641], initialZoom);
 //Base Peta yang akan Digunakan
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
 
-
 // =======================
 // ICON
 // =======================
@@ -49,6 +48,47 @@ const titleMap = {
 // =======================
 let wisata = [];
 
+// Fetch Data dari Supabase
+const supabaseUrl = "https://bnwvgbevozflbedajbti.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJud3ZnYmV2b3pmbGJlZGFqYnRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU5NzAxMjUsImV4cCI6MjA4MTU0NjEyNX0.N55Y0EqSoDl4fBotD0wkYIZDBz69BoLmXRuE2e7Pk0g";
+const supabase1 = window.supabase.createClient(
+    supabaseUrl,
+    supabaseKey
+  );
+
+  async function loadWisataFromSupabase() {
+  const { data, error } = await supabase1
+    .from("wisata")
+    .select("*");
+
+  if (error) {
+    console.error("❌ Gagal:", error.message);
+    return;
+  }
+
+  // =========================
+  // TRANSFORM DATA SUPABASE
+  // =========================
+  wisata = data.map(item => ({
+    nama: item.nama,
+    koordinat: [item.lat, item.lng],
+    foto: item.foto_url,
+    deskripsi: item.deskripsi,
+    icon: item.icon || "point",
+
+    // tambahkan "semua" otomatis
+    tipe: ["semua", ...(item.tipe || [])]
+  }));
+
+  console.log("✅ Data siap dipakai Leaflet:", wisata);
+
+  // render awal
+  renderData("semua");
+}
+
+loadWisataFromSupabase();
+
+//Fetch data dari JSON
 fetch("../data/wisata.json")
   .then((res) => res.json())
   .then((data) => {
@@ -80,27 +120,33 @@ function renderData(filter) {
 
     // === LIST ===
     let div = document.createElement("div");
-    div.className = "list-item";
-    div.innerHTML = `<b>${item.nama}</b>`;
+  div.className = "list-item";
+  div.innerHTML = `<b>${item.nama}</b>`;
 
-    let detail = document.createElement("div");
-    detail.className = "detail";
-    detail.id = "detail-" + index;
-    detail.innerHTML = `
-      <img src="${item.foto}">
-      <h3>${item.nama}</h3>
-      <p>${item.deskripsi}</p>
-      <small>${item.koordinat}</small>
-    `;
+   detail = document.createElement("div");
+  detail.className = "detail";
+  detail.id = "detail-" + index;
+  detail.innerHTML = `
+  <img src="${item.foto}">
+  <h3>${item.nama}</h3>
+  <p>${item.deskripsi}</p>
+  <small>${item.koordinat}</small>
+`;
 
-    div.appendChild(detail);
-    listContainer.appendChild(div);
+div.appendChild(detail);
+listContainer.appendChild(div);
 
-    // Klik list → zoom
-    div.addEventListener("click", () => {
-      map.setView(item.koordinat, 13, { animate: true });
-      toggleDetail(index);
-    });
+// Klik list → toggle + zoom
+div.addEventListener("click", () => {
+  map.setView(item.koordinat, 13, { animate: true });
+  toggleDetail(index);
+});
+
+// Klik marker → scroll + buka detail
+marker.on("click", () => {
+  div.scrollIntoView({ behavior: "smooth" });
+  toggleDetail(index);
+});
 
     // Klik marker → buka detail
     marker.on("click", () => {
@@ -122,7 +168,28 @@ function toggleDetail(index) {
   if (!detail) return;
 
   detail.style.display = "block";
+}let activeIndex = null;
+
+function toggleDetail(index) {
+  const detail = document.getElementById("detail-" + index);
+
+  // Jika klik item yang sama → tutup
+  if (activeIndex === index) {
+    detail.classList.remove("active");
+    activeIndex = null;
+    return;
+  }
+
+  // Tutup semua detail lain
+  document.querySelectorAll(".detail").forEach(d => {
+    d.classList.remove("active");
+  });
+
+  // Buka detail yang diklik
+  detail.classList.add("active");
+  activeIndex = index;
 }
+
 
 // =======================
 // FILTER BUTTON EVENT
