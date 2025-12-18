@@ -34,7 +34,7 @@
   },
   {
     "nama": "Sungai Aping",
-    "koordinat": [0.906493, -111.230850],
+    "koordinat": [0.906493, 111.230850],
     "foto": "images/sungaiAping.jpg",
     "deskripsi": "sebagai sumber mata air Desa Sekaih. Pada Sungai ini terdapatair terjun bernama, Teranjin. Kemudian, masyarakat setempat percaya jikalau air beriak dengan kencang maka terdapat bidadari sedang mandi. Sungai ini dinamakan Aping dikarenakan terdapat banyak pohon aping. Pohon aping umbutnya dapat diolah menjadi makanan seperti umbut kelapa.",
     "icon": "sungai",
@@ -42,7 +42,7 @@
   },
   {
     "nama": "Lubuk Pudung kudis",
-    "koordinat": [0.909007, -111.231900],
+    "koordinat": [0.909007, 111.231900],
     "foto": "images/lubukPudung.jpg",
     "deskripsi": "dikeramatkan oleh warga Sebetung Paluk. Terdapat satu telaga yang kedalamannya belum diukur. Selain itu, dipercaya akan menyembuhkan penyakit",
     "icon": "sungai",
@@ -73,6 +73,7 @@
     "tipe": ["semua","infrastruktur"]
   }
 ]
+
 
 
 
