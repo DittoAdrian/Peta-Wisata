@@ -48,46 +48,6 @@ const titleMap = {
 // =======================
 let wisata = [];
 
-// Fetch Data dari Supabase
-const supabaseUrl = "https://bnwvgbevozflbedajbti.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJud3ZnYmV2b3pmbGJlZGFqYnRpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU5NzAxMjUsImV4cCI6MjA4MTU0NjEyNX0.N55Y0EqSoDl4fBotD0wkYIZDBz69BoLmXRuE2e7Pk0g";
-const supabase1 = window.supabase.createClient(
-    supabaseUrl,
-    supabaseKey
-  );
-
-  async function loadWisataFromSupabase() {
-  const { data, error } = await supabase1
-    .from("wisata")
-    .select("*");
-
-  if (error) {
-    console.error("❌ Gagal:", error.message);
-    return;
-  }
-
-  // =========================
-  // TRANSFORM DATA SUPABASE
-  // =========================
-  wisata = data.map(item => ({
-    nama: item.nama,
-    koordinat: [item.lat, item.lng],
-    foto: item.foto_url,
-    deskripsi: item.deskripsi,
-    icon: item.icon || "point",
-
-    // tambahkan "semua" otomatis
-    tipe: ["semua", ...(item.tipe || [])]
-  }));
-
-  console.log("✅ Data siap dipakai Leaflet:", wisata);
-
-  // render awal
-  renderData("semua");
-}
-
-// loadWisataFromSupabase();
-
 //Fetch data dari JSON
 fetch("../data/wisata.json")
   .then((res) => res.json())
@@ -123,7 +83,7 @@ function renderData(filter) {
   div.className = "list-item";
   div.innerHTML = `<b>${item.nama}</b>`;
 
-   detail = document.createElement("div");
+  let detail = document.createElement("div");
   detail.className = "detail";
   detail.id = "detail-" + index;
   detail.innerHTML = `
@@ -258,4 +218,5 @@ fetch("../data/Batas_Desa_Ketungau_Hulu3.geojson")
       },
     }).addTo(map);
   });
+
 
