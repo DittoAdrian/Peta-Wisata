@@ -1,4 +1,5 @@
 [
+  
   {
     "nama": "Air Terjun Dusun Belubu",
     "koordinat": [0.95123, 111.29413],
@@ -16,12 +17,12 @@
     "tipe": ["semua","alam","wisata"]
   },
   {
-    "nama": "Tugu Garuda",
-    "koordinat": [1.000472, 111.135722],
-    "foto": "images/TuguGaruda.jpg",
-    "deskripsi":"Tugu Garuda di Desa Jasa merupakan salah satu penanda wilayah yang memiliki nilai simbolik dan historis bagi masyarakat setempat di Kecamatan Ketungau Hulu. Tugu ini berdiri kokoh di ruang terbuka desa sebagai representasi lambang negara Indonesia, yaitu burung Garuda, yang mencerminkan semangat persatuan, keberanian, dan nasionalisme.Secara visual, tugu ini berbentuk tiang beton dengan ornamen Garuda Pancasila di bagian atasnya. Struktur ini menjadi titik orientasi bagi warga, serta sering dijadikan tempat berkumpul pada kegiatan sosial dan peringatan kenegaraan. Keberadaannya mempertegas identitas desa sebagai wilayah yang berada di daerah perbatasan, sekaligus menjadi pengingat akan pentingnya menjaga kedaulatan wilayah dan rasa kebangsaan",
-    "icon":"point",
-    "tipe": ["semua","infrastruktur"]
+    "nama": "Air Terjun Bayan",
+    "koordinat": [0.973222, 111.019916],
+    "foto": "images/airTerjunBayan.jpg",
+    "deskripsi":"Air Terjun Bayan merupakan salah satu potensi alam yang berada di wilayah pedalaman Kecamatan Ketungau Hulu. Air terjun ini dikenal oleh masyarakat sekitar sebagai aliran air berbentuk terjunan yang berasal dari sungai kecil di kawasan hutan, dengan arus yang mengalir dari dataran lebih tinggi menuju lembah. Suara gemuruh air yang jatuh ke kolam alami di bawahnya menciptakan suasana yang sejuk dan tenang, serta menjadi ciri khas lingkungan hutan tropis di daerah ini.Lingkungan di sekitar Air Terjun Bayan masih sangat alami, dikelilingi pepohonan tinggi, semak-semak hijau, dan formasi batuan yang membingkai aliran air. Tempat ini menjadi titik perhentian alami bagi warga yang datang untuk beristirahat, mandi, atau menikmati pemandangan. Pada musim penghujan, debit air meningkat dan air terjun tampak lebih lebar dan kuat, sementara pada musim kemarau alirannya lebih tenang, menampakkan bebatuan dasar yang halus",
+    "icon": "airTerjun",
+    "tipe": ["semua","alam","wisata"]
   },
   {
     "nama": "Sungai Kelik",
@@ -32,37 +33,45 @@
     "tipe": ["semua","alam"]
   },
   {
-    "nama": "Air Terjun Bayan",
-    "koordinat": [0.973222, 111.019916],
-    "foto": "images/airTerjunBayan.jpg",
-    "deskripsi":"Air Terjun Bayan merupakan salah satu potensi alam yang berada di wilayah pedalaman Kecamatan Ketungau Hulu. Air terjun ini dikenal oleh masyarakat sekitar sebagai aliran air berbentuk terjunan yang berasal dari sungai kecil di kawasan hutan, dengan arus yang mengalir dari dataran lebih tinggi menuju lembah. Suara gemuruh air yang jatuh ke kolam alami di bawahnya menciptakan suasana yang sejuk dan tenang, serta menjadi ciri khas lingkungan hutan tropis di daerah ini.Lingkungan di sekitar Air Terjun Bayan masih sangat alami, dikelilingi pepohonan tinggi, semak-semak hijau, dan formasi batuan yang membingkai aliran air. Tempat ini menjadi titik perhentian alami bagi warga yang datang untuk beristirahat, mandi, atau menikmati pemandangan. Pada musim penghujan, debit air meningkat dan air terjun tampak lebih lebar dan kuat, sementara pada musim kemarau alirannya lebih tenang, menampakkan bebatuan dasar yang halus",
-    "icon": "airTerjun",
-    "tipe": ["semua","alam","wisata"]
-  },
-  {
-    "nama": "Sungai Ketungau Marakai ",
-    "koordinat": [0.38305, 111.63305],
-    "foto": "images/sungaiKetungauMarakai.jpg",
-    "deskripsi":"Sungai Ketungau Marakai merupakan salah satu aliran sungai yang berada di wilayah perbatasan Kecamatan Ketungau Hulu, Kabupaten Sintang. Sungai ini menjadi bagian dari sistem Sungai Ketungau yang mengalir dari daerah pedalaman menuju wilayah selatan Sintang. Aliran airnya melewati kawasan hutan tropis, ladang masyarakat, serta perkampungan yang berada di sepanjang bantaran sungai.",
+    "nama": "Sungai Aping",
+    "koordinat": [0.906493, -111.230850],
+    "foto": "images/sungaiAping.jpg",
+    "deskripsi": "sebagai sumber mata air Desa Sekaih. Pada Sungai ini terdapatair terjun bernama, Teranjin. Kemudian, masyarakat setempat percaya jikalau air beriak dengan kencang maka terdapat bidadari sedang mandi. Sungai ini dinamakan Aping dikarenakan terdapat banyak pohon aping. Pohon aping umbutnya dapat diolah menjadi makanan seperti umbut kelapa.",
     "icon": "sungai",
-    "tipe": ["semua","alam"]
+    "tipe": ["semua", "alam"]
   },
   {
-    "nama": "Bukit Kelam",
-    "koordinat": [0.074873, 111.654927],
-    "foto": "images/bukitKelam.png",
-    "deskripsi":"Bukit Kelam adalah sebongkah batu granit raksasa (monolit) yang membentang dari barat ke timur sepanjang sekitar 2-3 kilometer, dengan ketinggian mencapai 1.002 meter di atas permukaan laut (mdpl). Keunikannya terletak pada strukturnya yang hampir vertikal dan vegetasi hijau lebat yang tumbuh di lerengnya, menjadikannya pemandangan alam yang dramatis.",
-    "icon": "gunung",
-    "tipe": ["semua","alam"]
+    "nama": "Lubuk Pudung kudis",
+    "koordinat": [0.909007, -111.231900],
+    "foto": "images/lubukPudung.jpg",
+    "deskripsi": "dikeramatkan oleh warga Sebetung Paluk. Terdapat satu telaga yang kedalamannya belum diukur. Selain itu, dipercaya akan menyembuhkan penyakit",
+    "icon": "sungai",
+    "tipe": ["semua", "alam"]
   },
   {
-    "nama": "Bukit Saran",
-    "koordinat": [-0.4222539, 111.29438],
-    "foto": "images/bukitSaran.png",
-    "deskripsi":"Bukit Saran, atau terkadang disebut Gunung Saran, terletak di Kecamatan Tempunak. Bukit ini menawarkan pemandangan alam yang luas dengan hamparan hutan hujan tropis. Dikenal juga sebagai bagian dari inisiatif 'Heart of Borneo', kawasan ini memiliki keanekaragaman hayati yang tinggi dan suasana yang masih sangat alami. Mendaki Bukit Saran menyajikan pengalaman petualangan di tengah hutan lebat khas Kalimantan.",
-    "icon": "gunung",
-    "tipe": ["semua","alam"]
-  }
-
+    "nama": "Tugu Garuda",
+    "koordinat": [1.000472, 111.135722],
+    "foto": "images/TuguGaruda.jpg",
+    "deskripsi":"Tugu Garuda di Desa Jasa merupakan salah satu penanda wilayah yang memiliki nilai simbolik dan historis bagi masyarakat setempat di Kecamatan Ketungau Hulu. Tugu ini berdiri kokoh di ruang terbuka desa sebagai representasi lambang negara Indonesia, yaitu burung Garuda, yang mencerminkan semangat persatuan, keberanian, dan nasionalisme.Secara visual, tugu ini berbentuk tiang beton dengan ornamen Garuda Pancasila di bagian atasnya. Struktur ini menjadi titik orientasi bagi warga, serta sering dijadikan tempat berkumpul pada kegiatan sosial dan peringatan kenegaraan. Keberadaannya mempertegas identitas desa sebagai wilayah yang berada di daerah perbatasan, sekaligus menjadi pengingat akan pentingnya menjaga kedaulatan wilayah dan rasa kebangsaan",
+    "icon":"point",
+    "tipe": ["semua","infrastruktur"]
+  },
+  {
+    "nama": "Potensi Sawit",
+    "koordinat": [0.8852278, 111.0427166],
+    "foto": "images/petaSawit.jpg",
+    "deskripsi":"Peta Potensi Sawit",
+    "icon":"point",
+    "tipe": ["semua","infrastruktur","alam"]
+  },
+  {
+    "nama": "Perencanaan Bandara Udara",
+    "koordinat": [0.89022690, 111.0503126],
+    "foto": "images/petaBandara.jpg",
+    "deskripsi":"Peta Perencanaan Bandara Udara",
+    "icon":"point",
+    "tipe": ["semua","infrastruktur"]
+  },
 ]
+
 
