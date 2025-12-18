@@ -86,7 +86,7 @@ const supabase1 = window.supabase.createClient(
   renderData("semua");
 }
 
-loadWisataFromSupabase();
+// loadWisataFromSupabase();
 
 //Fetch data dari JSON
 fetch("../data/wisata.json")
@@ -258,3 +258,4 @@ fetch("../data/Batas_Desa_Ketungau_Hulu3.geojson")
       },
     }).addTo(map);
   });
+
