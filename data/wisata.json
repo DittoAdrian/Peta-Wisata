@@ -29,7 +29,7 @@
     "koordinat": [1.012431, 111.217461],
     "foto": "images/sungaiKelik.jpg",
     "deskripsi":"Sungai Kelik merupakan salah satu aliran sungai yang berada di wilayah Kecamatan Ketungau Hulu, Kabupaten Sintang. Sungai ini menjadi bagian dari jaringan sungai pedalaman yang mengalir melalui kawasan hutan, ladang masyarakat, dan permukiman desa. Aliran airnya relatif tenang pada musim kemarau, sementara pada musim hujan debitnya meningkat dan membuat sungai tampak lebih lebar.Lingkungan di sekitar Sungai Kelik didominasi oleh vegetasi tropis, dengan pepohonan rindang yang tumbuh di sepanjang tepi sungai. Kondisi alam yang masih alami ini menjadikan sungai sebagai habitat berbagai jenis ikan sungai dan satwa kecil lainnya. Bagi penduduk setempat, sungai ini memiliki peran penting dalam kehidupan sehari-hari. Selain menjadi sumber air untuk kebutuhan domestik, Sungai Kelik juga digunakan untuk memancing, mencuci, serta menjadi tempat rekreasi alami bagi warga desa.",
-    "icon": "point",
+    "icon": "sungai",
     "tipe": ["semua","alam"]
   },
   {
@@ -73,6 +73,7 @@
     "tipe": ["semua","infrastruktur"]
   }
 ]
+
 
 
 
