@@ -112,6 +112,7 @@ marker.on("click", () => {
     marker.on("click", () => {
       div.scrollIntoView({ behavior: "smooth" });
       toggleDetail(index);
+      detail.classList.add("active")
     });
   });
 }
@@ -218,5 +219,6 @@ fetch("../data/Batas_Desa_Ketungau_Hulu3.geojson")
       },
     }).addTo(map);
   });
+
 
 
